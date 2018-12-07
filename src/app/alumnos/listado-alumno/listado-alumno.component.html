@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <a class="btn btn-success" [routerLink]="['nuevo']">Agregar</a>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre Completo</th>
+          <th>Curso</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos">
+          <td>{{alumno.idAlumno}}</td>
+          <td>{{alumno.nombreCompleto}}</td>
+          <td>{{alumno.curso?.titulo}}</td>
+          <td>
+            <button class="btn btn-warning mr-1" (click)="editar(alumno.idAlumno)">Editar</button>
+            <button class="btn btn-danger" (click)="eliminar(alumno.idAlumno)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
